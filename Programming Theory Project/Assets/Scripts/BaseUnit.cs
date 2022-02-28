@@ -10,7 +10,7 @@ public abstract class BaseUnit : MonoBehaviour
     private GameObject marker;
 
     protected string owner = null;
-    public string Owner
+    public string Owner         //ENCAPSULATION
     {
         get { return owner; }
     }
@@ -24,6 +24,11 @@ public abstract class BaseUnit : MonoBehaviour
     public RaycastHit ClickedTarget
     {
         set { clickedTarget = value; }
+    }
+    protected bool isMouseClick0 = false;
+    public bool IsMouseClick0
+    {
+        set { isMouseClick0 = value; }
     }
 
     //unit data
@@ -40,19 +45,17 @@ public abstract class BaseUnit : MonoBehaviour
         }
     }
 
-    private void SelectMarker()
+    private void SelectMarker()     //ABSTRACTION
     {
         if (isSelected)
         {
             marker = Instantiate(selectMarkerObject, transform);
             isMarkerOn = true;
-            Debug.Log(isMarkerOn);
         }
         else
         {
             Destroy(marker);
             isMarkerOn = false;
-            Debug.Log(isMarkerOn);
         }
     }
 

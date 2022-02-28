@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         GetInput();
     }
 
-    private void GetInput()
+    private void GetInput()     //ABSTRACTION
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
                 {
                     //pass data about what we have clicked
                     selectedObjectBaseUnit.ClickedTarget = f_hit;
+                    //flag for options
+                    selectedObjectBaseUnit.IsMouseClick0 = true;
                 }
 
             }
